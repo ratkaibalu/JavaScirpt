@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+</head>
+
+<body>
+    <div class="div1">
+        <h1>Varázslatos katakomba</h1>     
+        <table class="start">
+            <tr>
+                <td><p>Játékosok száma: </p></td>
+                <td><input id="playerNumber" type="range" value="2" min="1" max="4"><span id="playerValue"></span><p1 style="margin-left: 20px;">(min:1 - max:4)</p1></td>
+            </tr>
+            <tr>
+                <td><p>Játékosonkénti kincsek száma: </p></td>
+                <td><input class="treasureValue" id="treasureVal" type="range" value="2" min="1" max="12"><span id="treasureV"></span><p1>(1-(24/játékosok száma))</p1></td>
+            </tr>
+            <tr>
+                <td><h2 onclick="gameDescription()">Játék leírása</h2></td>
+                <td><h2 onclick="gameStart()">Játék indítása</h2></td>
+            </tr>
+        </table>
+       
+    </div>
+    <div class="div2">
+        <table class="table1">
+            <tr>
+                <td class="newGame"><h3 onclick="newGame()">Új játék</h3></td>
+                <td></td>
+                <td id="upperArrow"><img class="block" src="upperArrow.jpg" onclick="upper1Arrow()"></td>
+                <td></td>
+                <td id="upperArrow"><img class="block" src="upperArrow.jpg" onclick="upper2Arrow()"></td>
+                <td></td>
+                <td id="upperArrow"><img class="block" src="upperArrow.jpg" onclick="upper3Arrow()"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="field corner"><img class="block" src="leftUpperCorner.jpg"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="block" src="upperSide3.jpg"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="block" src="upperSide3.jpg"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field"><img class="block" src="rightUpperCorner.jpg"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="leftArrow"><img class="block" src="leftArrow.jpg" onclick="left1Arrow()"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td id="rightArrow"><img class="block" src="rightArrow.jpg" onclick="right1Arrow()"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="field treasureMap"><img class="block" src="leftSide3.jpg"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="block" src="leftSide3.jpg"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="block" src="upperSide3.jpg"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="block" src="rightSide3.jpg"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="leftArrow"><img class="block" src="leftArrow.jpg" onclick="left2Arrow()"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td id="rightArrow"><img class="block" src="rightArrow.jpg" onclick="right2Arrow()"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="field treasureMap"><img class="block" src="leftSide3.jpg"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="block" src="upperSide3.jpg"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="block" src="rightSide3.jpg"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="block" src="rightSide3.jpg"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="leftArrow"><img class="block" src="leftArrow.jpg" onclick="left3Arrow()"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td id="rightArrow"><img class="block" src="rightArrow.jpg" onclick="right3Arrow()"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="field corner" id="leftBottom"><img class="block" src="leftBottomCorner.jpg"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="block" src="bottomSide3.jpg"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field treasureMap"><img class="block" src="bottomSide3.jpg"></td>
+                <td class="field treasureMap"><img class="random"></td>
+                <td class="field corner" id="rightBottom"><img class="block" src="rightBottomCorner.jpg"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td id="bottom1Arrow"><img class="block" src="bottomArrow.jpg" onclick="bottom1Arrow()"></td>
+                <td></td>
+                <td id="bottom2Arrow"><img class="block" src="bottomArrow.jpg" onclick="bottom2Arrow()"></td>
+                <td></td>
+                <td id="bottom3Arrow"><img class="block" src="bottomArrow.jpg" onclick="bottom3Arrow()"></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td id="valami">
+                    <p>Szoba: <img id="lastimg" onclick="rotate()"></p>
+                </td>
+                <td class="table2">
+
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td><img id="up" class="arrow" src="bottomArrow.jpg" onclick="moveUp()"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><img id="left" class="arrow" src="rightArrow.jpg" onclick="moveLeft()"></td>
+                            <td><img id="down" class="arrow" src="upperArrow.jpg" onclick="moveDown()"></td>
+                            <td><img id="right" class="arrow" src="leftArrow.jpg" onclick="moveRight()"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+        <div class="div3">
+            <h1>A játék leírása</h1>
+            <p>A katakomba szobáit egy 7x7-es négyzetrács cellái jelképezik. Minden szoba esetén adott, hogy mely falain van ajtó. Ha két szomszédos szoba érintkező falán egy-egy ajtó van, akkor át lehet menni egyik szobából a másikba. A négyzetrács páros sorait és oszlopait el lehet tolni, a többi szoba végig rögzített a játék során. Az eltolásokkal az ajtókon keresztül utak nyílnak a szobák között, így lehet eljutni a kincsekhez. Mindegyik kérő arra törekszik, hogy a katakomba szobáinak ötletes eltolásával eljusson a kincsekhez. Aki elsőként találja meg mindahányat és kiindulópontjára sikeresen visszaérkezik az a nyertes.</p>
+        </div>
+    
+    
+    <script src="index.js"></script>
+</body>
+
+</html>

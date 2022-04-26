@@ -1,0 +1,83 @@
+.div1{
+    display: block;
+    background-color: rgb(109, 39, 173);
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.div3{
+    display: none;
+}
+.start{
+    margin: auto;
+    
+}
+h2{
+    background-color: aliceblue;
+}
+h3{
+    font-size: 20px;
+    color: aliceblue;
+}
+.div2{
+    display: none;
+}
+.table1 {
+    width: 400px;
+    height: 400px;
+}
+.block{
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+.random{
+    width: 60px;
+    height: 60px;
+}
+body{
+    background-color: darkmagenta;
+}
+.field{
+    position: relative;
+}
+.treasureMap{
+    position: relative;
+}
+#valami{
+    float: left;
+    margin-left: 100px;
+}
+p{
+    font-size: 20px;
+    color: rgb(241, 76, 76);
+}
+
+.player{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 25px;
+    height: 25px;
+}
+.treasure{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 25px;
+    height: 25px;
+}
+#lastimg{
+    width: 60px;
+    height: 60px;
+}
+
+.arrow{
+    width: 40px;
+    height: 40px;
+}
+
+.table2{
+    float: left;
+    margin-left: 60px;
+}
